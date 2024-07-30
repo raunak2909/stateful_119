@@ -9,15 +9,19 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage>{
+  ///initializers
   TextEditingController no1Controller = TextEditingController();
   TextEditingController no2Controller = TextEditingController();
   String result = '';
   int check = 0;
+
+
   @override
   Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
+        ///title
         title: Text('Calculator'),
       ),
 
@@ -29,6 +33,7 @@ class HomePageState extends State<HomePage>{
             SizedBox(
               height: 21,
             ),
+            ///no 1 tex field
             TextField(
               keyboardType: TextInputType.number,
               controller: no1Controller,
@@ -40,6 +45,7 @@ class HomePageState extends State<HomePage>{
             SizedBox(
               height: 11,
             ),
+            ///no 2 tex field
             TextField(
               keyboardType: TextInputType.number,
               controller: no2Controller,
@@ -51,6 +57,7 @@ class HomePageState extends State<HomePage>{
             SizedBox(
               height: 21,
             ),
+            ///operators(+,-,*,/)
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -78,6 +85,7 @@ class HomePageState extends State<HomePage>{
             SizedBox(
               height: 11,
             ),
+            ///calculate
             SizedBox(
               width: double.infinity,
               child: ElevatedButton(onPressed: (){
@@ -91,6 +99,7 @@ class HomePageState extends State<HomePage>{
     );
   }
 
+  ///operation function
   void caluclation(){
     if(no1Controller.text!="" && no2Controller.text!="") {
       int no1 = int.parse(no1Controller.text.toString());
